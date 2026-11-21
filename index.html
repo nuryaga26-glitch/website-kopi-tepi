@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Tepi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="home">
+    <div class="navbar__links">
+      <div class="navbar__links--left">
+        <a href="#home" class="navbar__link">Home</a>
+        <a href="#our-menu" class="navbar__link">Our Menu</a>
+      </div>
+      <a href="#home" class="navbar__logo">
+        <img src="assets/logo.png" alt="Kopi Tepi">
+      </a>
+      <div class="navbar__links--right">
+        <a href="#about-us" class="navbar__link">About Us</a>
+        <a href="#location" class="navbar__link">Location</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="assets/hero-bg.png" alt="Coffee background">
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__title">
+        Saatnya Nikmati Secangkir <span>Kopi</span>
+      </h1>
+      <p class="hero__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed cursus ante. Nullam sed erat eu neque tincidunt venenatis at nec nisi
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Menu Section -->
+  <section class="section menu" id="our-menu">
+    <h2 class="menu__title">Our Menu</h2>
+    <div class="menu__grid">
+      <div class="menu__item" onclick="openModal('espresso')">
+        <div class="menu__item-image">
+          <img src="assets/menu-1.png" alt="Espresso">
+        </div>
+        <span class="menu__item-label">Espresso</span>
+      </div>
+      <div class="menu__item" onclick="openModal('cappucino')">
+        <div class="menu__item-image">
+          <img src="assets/menu-2.png" alt="Cappucino">
+        </div>
+        <span class="menu__item-label">Cappucino</span>
+      </div>
+      <div class="menu__item" onclick="openModal('montblanc')">
+        <div class="menu__item-image">
+          <img src="assets/menu-3.png" alt="Mont Blanc">
+        </div>
+        <span class="menu__item-label">Mont Blanc</span>
+      </div>
+      <div class="menu__item" onclick="openModal('dirtylatte')">
+        <div class="menu__item-image">
+          <img src="assets/menu-4.png" alt="Dirty Latte">
+        </div>
+        <span class="menu__item-label">Dirty Latte</span>
+      </div>
+      <div class="menu__item" onclick="openModal('americano')">
+        <div class="menu__item-image">
+          <img src="assets/menu-5.png" alt="Americano">
+        </div>
+        <span class="menu__item-label">Americano</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- About Us Section -->
+  <section class="section about" id="about-us">
+    <div class="about__content">
+      <h2 class="about__title">About Us</h2>
+      <p class="about__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed cursus ante. Nullam sed erat eu neque tincidunt venenatis at nec nisi. Sed elementum risus at varius rhoncus. Nam et nisi quis nisi consectetur tincidunt quis eu leo. Mauris euismod ipsum vel augue sodales, a bibendum enim imperdiet. Mauris imperdiet augue ligula, id aliquet erat vulputate sit amet. Nullam id erat cursus libero finibus venenatis vitae accumsan quam. Proin vestibulum dictum lacus, nec semper sem elementum id. Nullam tristique dapibus magna nec tempus. Nullam velit dui, dictum id convallis nec, dictum quis lorem. Vestibulum vel mi pellentesque, tempor arcu ut, mattis libero. Suspendisse ullamcorper in nulla quis sollicitudin.
+      </p>
+    </div>
+    <div class="about__image">
+      <img src="assets/about-us.png" alt="About Kopi Tepi">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Location Section -->
+  <section class="section location" id="location">
+    <h2 class="location__title">Location</h2>
+    <div class="location__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63466.37206953702!2d106.7765979!3d-6.3878469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec0828bcde9f%3A0x301576d150524f0!2sDepok%2C%20Depok%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+        width="100%"
+        height="100%"
+        style="border:0; border-radius:30px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modal-espresso" onclick="closeModalOnOverlay(event)">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 class="modal__title">Espresso</h3>
+        <button class="modal__close" onclick="closeModal('espresso')">Close</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__image">
+          <img src="assets/menu-1.png" alt="Espresso">
+        </div>
+        <div class="modal__description">
+          <span class="modal__label">OUR MENU</span>
+          <p class="modal__text">A concentrated coffee with a rich aroma and a smooth layer of crema.</p>
+        </div>
+      </div>
+      <button class="modal__back-btn" onclick="closeModal('espresso')">Back to menu</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cappucino" onclick="closeModalOnOverlay(event)">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 class="modal__title">Cappucino</h3>
+        <button class="modal__close" onclick="closeModal('cappucino')">Close</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__image">
+          <img src="assets/menu-2.png" alt="Cappucino">
+        </div>
+        <div class="modal__description">
+          <span class="modal__label">OUR MENU</span>
+          <p class="modal__text">Espresso paired with steamed milk and a soft, airy cap of milk foam.</p>
+        </div>
+      </div>
+      <button class="modal__back-btn" onclick="closeModal('cappucino')">Back to menu</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-montblanc" onclick="closeModalOnOverlay(event)">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 class="modal__title">Mont Blanc</h3>
+        <button class="modal__close" onclick="closeModal('montblanc')">Close</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__image">
+          <img src="assets/menu-3.png" alt="Mont Blanc">
+        </div>
+        <div class="modal__description">
+          <span class="modal__label">OUR MENU</span>
+          <p class="modal__text">A layered iced coffee topped with a cloud of cream.</p>
+        </div>
+      </div>
+      <button class="modal__back-btn" onclick="closeModal('montblanc')">Back to menu</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-dirtylatte" onclick="closeModalOnOverlay(event)">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 class="modal__title">Dirty Latte</h3>
+        <button class="modal__close" onclick="closeModal('dirtylatte')">Close</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__image">
+          <img src="assets/menu-4.png" alt="Dirty Latte">
+        </div>
+        <div class="modal__description">
+          <span class="modal__label">OUR MENU</span>
+          <p class="modal__text">Bold espresso poured over milk for a beautifully layered coffee.</p>
+        </div>
+      </div>
+      <button class="modal__back-btn" onclick="closeModal('dirtylatte')">Back to menu</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-americano" onclick="closeModalOnOverlay(event)">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 class="modal__title">Americano</h3>
+        <button class="modal__close" onclick="closeModal('americano')">Close</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__image">
+          <img src="assets/menu-5.png" alt="Americano">
+        </div>
+        <div class="modal__description">
+          <span class="modal__label">OUR MENU</span>
+          <p class="modal__text">Espresso lengthened with water for a clean, full-flavoured cup.</p>
+        </div>
+      </div>
+      <button class="modal__back-btn" onclick="closeModal('americano')">Back to menu</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(event) {
+      if (event.target === event.currentTarget) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

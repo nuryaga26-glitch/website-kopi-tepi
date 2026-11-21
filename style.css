@@ -1,0 +1,532 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 0 60px;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1920px;
+}
+
+.navbar__links--left {
+  display: flex;
+  gap: 50px;
+  margin-right: auto;
+}
+
+.navbar__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__logo img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar__links--right {
+  display: flex;
+  gap: 50px;
+  margin-left: auto;
+}
+
+.navbar__link {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.navbar__link:hover {
+  opacity: 0.7;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 660px;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 60px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 65px; /* offset for fixed navbar */
+}
+
+.hero__title {
+  font-size: clamp(40px, 5vw, 96px);
+  font-weight: 700;
+  line-height: 0.89;
+  max-width: 55%;
+}
+
+.hero__title span {
+  color: #a96f2c;
+}
+
+.hero__description {
+  margin-top: 30px;
+  font-size: clamp(14px, 1.25vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 39%;
+}
+
+/* ===== Section Common ===== */
+.section {
+  padding: 80px 60px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-size: clamp(32px, 5vw, 96px);
+  font-weight: 700;
+  line-height: 0.89;
+}
+
+.section__title--center {
+  text-align: center;
+}
+
+.section__title--right {
+  text-align: right;
+}
+
+/* ===== Our Menu Section ===== */
+.menu {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.menu__title {
+  font-size: clamp(28px, 2.5vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.menu__grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu__item:hover {
+  transform: scale(1.05);
+}
+
+.menu__item-image {
+  width: clamp(150px, 15.6vw, 300px);
+  height: clamp(150px, 15.6vw, 300px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.menu__item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu__item-label {
+  font-size: clamp(16px, 2.08vw, 40px);
+  font-weight: 600;
+  text-align: center;
+}
+
+.divider {
+  width: 88%;
+  max-width: 1696px;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+/* ===== About Us Section ===== */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about__content {
+  flex: 1;
+}
+
+.about__title {
+  font-size: clamp(32px, 5vw, 96px);
+  font-weight: 700;
+  line-height: 0.89;
+  margin-bottom: 30px;
+}
+
+.about__description {
+  font-size: clamp(14px, 1.25vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.about__image {
+  flex-shrink: 0;
+  width: clamp(250px, 31.25vw, 600px);
+  height: clamp(250px, 31.25vw, 600px);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Location Section ===== */
+.location {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.location__title {
+  font-size: clamp(32px, 5vw, 96px);
+  font-weight: 700;
+  line-height: 0.89;
+  text-align: right;
+  flex: 1;
+}
+
+.location__map {
+  width: 62%;
+  flex-shrink: 0;
+  height: clamp(350px, 40.6vw, 780px);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* ===== Modal / Popup ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.82);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background-color: #110e0b;
+  border-radius: 24px;
+  padding: 48px;
+  width: 90%;
+  max-width: 1040px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__title {
+  font-size: clamp(28px, 2.3vw, 44px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.modal__close {
+  font-size: clamp(18px, 1.46vw, 28px);
+  font-weight: 500;
+  color: #c7c2ba;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: opacity 0.3s;
+}
+
+.modal__close:hover {
+  opacity: 0.7;
+}
+
+.modal__body {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.modal__image {
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.modal__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+.modal__label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #a66621;
+  line-height: 1.4;
+}
+
+.modal__text {
+  font-size: clamp(18px, 1.56vw, 30px);
+  font-weight: 400;
+  color: #c7c2ba;
+  line-height: 1.4;
+}
+
+.modal__back-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #a66621;
+  color: #fff;
+  font-size: clamp(18px, 1.46vw, 28px);
+  font-weight: 500;
+  padding: 16px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+  line-height: 1.4;
+}
+
+.modal__back-btn:hover {
+  background-color: #8a5419;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .navbar__links {
+    gap: 30px;
+  }
+
+  .navbar__links--left,
+  .navbar__links--right {
+    gap: 30px;
+  }
+
+  .hero__content {
+    padding: 0 30px;
+    padding-top: 65px;
+  }
+
+  .hero__title {
+    max-width: 70%;
+  }
+
+  .hero__description {
+    max-width: 55%;
+  }
+
+  .section {
+    padding: 60px 30px;
+  }
+
+  .menu {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .about {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .location {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__link {
+    font-size: 14px;
+  }
+
+  .navbar__links--left,
+  .navbar__links--right {
+    gap: 20px;
+  }
+
+  .hero__title {
+    max-width: 90%;
+  }
+
+  .hero__description {
+    max-width: 80%;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about__image {
+    width: clamp(200px, 60vw, 400px);
+    height: clamp(200px, 60vw, 400px);
+  }
+
+  .menu__grid {
+    gap: 16px;
+  }
+
+  .location__title {
+    text-align: center;
+  }
+
+  .location {
+    flex-direction: column;
+  }
+
+  .location__map {
+    width: 100%;
+  }
+
+  .modal {
+    padding: 28px;
+    gap: 24px;
+  }
+
+  .modal__body {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .modal__image {
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+  }
+}
